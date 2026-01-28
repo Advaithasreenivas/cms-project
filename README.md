@@ -31,6 +31,20 @@ All APIs are tested using **Postman**.
 ---
 
 ## 📁 Project Structure
+cms-project/
+│
+├── app.py # Main Flask application
+├── database.db # SQLite database
+├── requirements.txt # Dependencies
+├── templates/ # HTML templates
+│ ├── login.html
+│ ├── dashboard.html
+│ ├── posts.html
+│ ├── analytics.html
+│ └── layout.html
+├── static/ # CSS and JS files
+│ └── style.css
+└── README.md # Project documentation
 
 ---
 
@@ -72,6 +86,8 @@ The server will start at:http://127.0.0.1:5000/
   "email": "admin@example.com",
   "phone": "7893412468"
 }
+
+
 🧪 Testing with Postman
 
 Open Postman
