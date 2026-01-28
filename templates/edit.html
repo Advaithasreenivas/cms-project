@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Edit Post</h1>
+
+<div class="card glass">
+<form method="POST">
+<input name="title" value="{{post.title}}" required>
+<textarea name="content">{{post.content}}</textarea>
+
+<div class="form-row">
+<input name="email" value="{{post.email}}">
+<input name="phone" value="{{post.phone}}">
+<select name="status">
+<option {% if post.status=='Draft' %}selected{% endif %}>Draft</option>
+<option {% if post.status=='Published' %}selected{% endif %}>Published</option>
+</select>
+</div>
+
+<button class="btn-primary">Update</button>
+</form>
+</div>
+
+{% endblock %}

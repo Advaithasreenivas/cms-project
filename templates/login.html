@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMS Admin</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-bg">
+
+<div class="auth-card glass">
+  <h1>CMS Admin</h1>
+  <p class="auth-sub">Sign in to manage content</p>
+
+  <form method="POST">
+    <div class="field">
+      <label>Username</label>
+      <input name="username" required>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password" required>
+    </div>
+    <button class="btn-primary">Login</button>
+  </form>
+
+  <p class="hint">No account? <a href="/register">Create admin</a></p>
+</div>
+
+</body>
+</html>

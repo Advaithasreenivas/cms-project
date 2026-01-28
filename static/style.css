@@ -1,0 +1,173 @@
+/* ========= APPLE PRO UI ========= */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#f7f8fc,#eef1f7);
+  color:#1d1d1f;
+}
+
+/* GLASS */
+.glass{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(24px);
+  border-radius:28px;
+  box-shadow:0 30px 60px rgba(0,0,0,.08);
+}
+
+/* ---------- AUTH ---------- */
+.auth-bg{height:100vh;display:flex;align-items:center;justify-content:center}
+.auth-card{width:420px;padding:48px}
+.auth-card h1{text-align:center;font-size:30px}
+.auth-sub{text-align:center;color:#6b7280;margin-bottom:32px}
+.field{margin-bottom:20px}
+.field label{font-size:13px;color:#6b7280;margin-bottom:6px;display:block}
+.field input{
+  width:100%;padding:15px;border:none;border-radius:16px;
+  background:#f1f3f6;font-size:14px
+}
+.field input:focus{outline:none;background:#e9edff}
+.btn-primary{
+  width:100%;padding:15px;border-radius:18px;border:none;
+  background:linear-gradient(135deg,#a5b4fc,#818cf8);
+  color:white;font-size:15px;cursor:pointer
+}
+.hint{text-align:center;font-size:13px;margin-top:22px}
+.hint a{color:#6366f1;text-decoration:none}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar{
+  position:fixed;width:260px;height:100vh;padding:26px;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(24px);
+  border-right:1px solid rgba(0,0,0,.05)
+}
+.logo{font-size:22px;font-weight:600;margin-bottom:45px}
+.sidebar a{
+  display:flex;align-items:center;gap:14px;
+  padding:15px;margin-bottom:12px;
+  border-radius:16px;text-decoration:none;
+  color:#374151;transition:.2s
+}
+.sidebar a:hover{background:#eef2ff;color:#4f46e5}
+.logout{color:#dc2626}
+
+/* ---------- MAIN ---------- */
+.main{margin-left:280px;padding:60px}
+.subtext{color:#6b7280;margin-bottom:40px}
+
+/* ---------- DASHBOARD ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.stat-card{padding:28px;border-radius:26px}
+.stat-card span{font-size:14px;color:#6b7280}
+.stat-card h2{font-size:38px;margin-top:12px}
+.stat-card.green{background:linear-gradient(135deg,#ecfeff,#d1fae5)}
+.stat-card.yellow{background:linear-gradient(135deg,#fff7ed,#fde68a)}
+.card{margin-top:50px;padding:34px}
+
+/* ---------- POSTS ---------- */
+textarea{
+  width:100%;min-height:120px;
+  padding:14px;border-radius:16px;border:none;background:#f1f3f6
+}
+.form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.post-card{
+  margin-top:24px;padding:26px;border-radius:24px
+}
+.post-header{display:flex;justify-content:space-between}
+.badge{padding:6px 14px;border-radius:20px;font-size:12px}
+.badge.green{background:#dcfce7}
+.badge.yellow{background:#fef3c7}
+.meta{font-size:13px;color:#6b7280;margin-top:10px}
+.delete-btn{color:#dc2626;text-decoration:none;font-size:13px}
+/* ===== ULTRA MODE EFFECTS ===== */
+
+/* Fade animation */
+.fade-in {
+  animation: fadeInUp 0.9s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode */
+body.dark {
+  background: linear-gradient(180deg,#0f172a,#020617);
+  color: #e5e7eb;
+}
+
+body.dark .glass {
+  background: rgba(15,23,42,0.7);
+  color: #e5e7eb;
+}
+
+body.dark .sidebar {
+  background: rgba(15,23,42,0.75);
+}
+
+body.dark .sidebar a {
+  color: #c7d2fe;
+}
+
+body.dark .sidebar a:hover {
+  background: rgba(99,102,241,0.25);
+}
+
+body.dark canvas {
+  filter: brightness(0.95);
+}
+/* ===== AI ASSIST ===== */
+.ai-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg,#eef2ff,#f8fafc);
+  font-size: 14px;
+}
+
+.ai-box ul {
+  margin: 10px 0;
+  padding-left: 18px;
+}
+
+.ai-box li {
+  margin-bottom: 6px;
+}
+
+.ai-box small {
+  color: #6b7280;
+}
+
+/* Dark mode AI */
+body.dark .ai-box {
+  background: linear-gradient(135deg,#1e293b,#020617);
+}
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 14px;
+  opacity: 0;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+body.dark .toast {
+  background: rgba(255,255,255,0.15);
+}

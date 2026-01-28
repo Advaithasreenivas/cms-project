@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Posts</h1>
+<p class="subtext">Create & manage content with AI assistance</p>
+
+<!-- CREATE POST -->
+<div class="card glass fade-in">
+<form method="POST" id="postForm">
+  <input name="title" id="title" placeholder="Post title" required>
+
+  <textarea name="content" id="content" placeholder="Start writing your content..." required></textarea>
+
+  <!-- AI SUGGESTION BOX -->
+  <div class="ai-box">
+    🤖 <strong>AI Suggestions</strong>
+    <ul id="aiTips">
+      <li>Start writing to get suggestions…</li>
+    </ul>
+    <small id="charCount">0 characters</small>
+  </div>
+
+  <div class="form-row">
+    <input name="email" placeholder="Author email">
+    <input name="phone" placeholder="Contact number">
+    <select name="status">
+      <option>Draft</option>
+      <option>Published</option>
+    </select>
+  </div>
+
+  <button class="btn-primary">Save Post</button>
+</form>
+</div>
+
+<!-- EXISTING POSTS -->
+{% for p in posts %}
+<div class="post-card glass fade-in">
+  <div class="post-header">
+    <h3>{{ p.title }}</h3>
+    <span class="badge {{ 'green' if p.status=='Published' else 'yellow' }}">
+      {{ p.status }}
+    </span>
+  </div>
+
+  <p>{{ p.content }}</p>
+
+  <div class="meta">
+    📧 {{ p.email }} | 📞 {{ p.phone }} | 🕒 {{ p.created_at }}
+  </div>
+
+  <a href="/edit/{{p.id}}">✏️ Edit</a> |
+  <a href="/delete/{{p.id}}" class="delete-btn">🗑 Delete</a>
+</div>
+{% endfor %}
+
+<!-- AI SCRIPT -->
+<script>
+const content = document.getElementById("content");
+const tips = document.getElementById("aiTips");
+const counter = document.getElementById("charCount");
+
+content.addEventListener("input", () => {
+  const text = content.value;
+  counter.innerText = text.length + " characters";
+
+  tips.innerHTML = "";
+
+  if (text.length < 50) {
+    tips.innerHTML += "<li>✍️ Add more detail for better clarity.</li>";
+  }
+  if (!text.includes(".")) {
+    tips.innerHTML += "<li>📌 Use complete sentences.</li>";
+  }
+  if (text.length > 150) {
+    tips.innerHTML += "<li>✅ Content length looks good.</li>";
+  }
+  if (text.toLowerCase().includes("ai")) {
+    tips.innerHTML += "<li>🤖 Consider explaining AI benefits clearly.</li>";
+  }
+});
+</script>
+
+{% endblock %}

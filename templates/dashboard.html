@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Dashboard</h1>
+<p class="subtext">Overview of your CMS</p>
+
+<div class="stats">
+  <div class="stat-card glass">
+    <span>Total Posts</span><h2>{{ total }}</h2>
+  </div>
+  <div class="stat-card green glass">
+    <span>Published</span><h2>{{ published }}</h2>
+  </div>
+  <div class="stat-card yellow glass">
+    <span>Drafts</span><h2>{{ draft }}</h2>
+  </div>
+</div>
+
+<div class="card glass">
+  <h3>System Health</h3>
+  <p>✅ Admin authenticated</p>
+  <p>✅ Content engine active</p>
+  <p>✅ Analytics running</p>
+</div>
+
+{% endblock %}
