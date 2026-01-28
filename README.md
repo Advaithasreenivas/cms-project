@@ -88,7 +88,7 @@ The server will start at:http://127.0.0.1:5000/
 }
 
 
-🧪 Testing with Postman
+##🧪 Testing with Postman
 
 Open Postman
 
@@ -106,7 +106,7 @@ Click Send
 
 Verify response status and data
 
-⚠️ Notes
+##⚠️ Notes
 
 Authentication is session-based
 
@@ -116,10 +116,10 @@ Analytics data is calculated from stored posts
 
 Database file can be replaced with MySQL or MongoDB for production use
 
-👨‍💻 Author
+##👨‍💻 Author
 
 Advaitha sreenivas
 
-📜 License
+##📜 License
 
 This project is created for educational purposes and is free to use for learning and academic demonstrations.
