@@ -1,125 +1,121 @@
 ## 📚 Content Management System REST API (Flask CRUD Project)
 
-This project is a **Content Management System (CMS)** built using **Python Flask**.  
-It demonstrates **CRUD operations (Create, Read, Update, Delete)** for managing content such as posts/articles and provides **analytics endpoints**.  
-All APIs are tested using **Postman**.
+This project is a simple **Content Management System (CMS) REST API** built using **Python Flask**.  
+It demonstrates basic **CRUD operations (Create, Read, Update, Delete)** using HTTP methods and JSON data.  
+All backend APIs are tested using **Postman**.
 
 ---
 
 ## 🚀 Features
 
-- Admin login and session-based authentication
-- Create new content/posts (POST)
-- View all posts (GET)
-- View post by ID (GET)
-- Update post details (PUT)
-- Delete post by ID (DELETE)
-- Analytics for published and draft content
-- JSON-based request and response handling
-- API testing using Postman
+* Admin login (POST)
+* Add new posts (POST)
+* Get all posts (GET)
+* Get post by ID (GET)
+* Update post details (PUT)
+* Delete post by ID (DELETE)
+* Analytics for published and draft posts
+* JSON-based request and response handling
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python 3
-- Flask (Web Framework)
-- SQLite (Database)
-- Postman (API Testing)
-- Chart.js (Analytics visualization)
+* Python 3  
+* Flask (Web Framework)  
+* SQLite (Database)  
+* Postman (API Testing)  
 
 ---
 
 ## 📁 Project Structure
+```
 cms-project/
 │
 ├── app.py # Main Flask application
 ├── database.db # SQLite database
+├── README.md # Project documentation
 ├── requirements.txt # Dependencies
-├── templates/ # HTML templates
-│ ├── login.html
-│ ├── dashboard.html
-│ ├── posts.html
-│ ├── analytics.html
-│ └── layout.html
-├── static/ # CSS and JS files
-│ └── style.css
-└── README.md # Project documentation
+├── static/ # CSS & JS files
+└── templates/ # HTML templates
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Install Flask
+### 1️⃣ Clone the Repository
 
-### 2️⃣ Run the Application
+git clone https://github.com/your-username/cms-project.git
 
-The server will start at:http://127.0.0.1:5000/
+cd cms-project
+
+### 2️⃣ Install Dependencies
+
+pip install flask
+
+### 3️⃣ Run the Application
+python app.py
+Server will run at:http://127.0.0.1:5000/
 
 ---
 
 ## 🔗 API Endpoints
 
-| Method | Endpoint              | Description                     |
-|------|-----------------------|---------------------------------|
-| POST | `/`                   | Admin login                     |
-| GET  | `/dashboard`          | Admin dashboard                 |
-| POST | `/posts`              | Add new post                    |
-| GET  | `/posts`              | Get all posts                   |
-| GET  | `/posts/<id>`         | Get post by ID                  |
-| PUT  | `/posts/<id>`         | Update post                     |
-| DELETE | `/delete/<id>`      | Delete post                     |
-| GET  | `/analytics`          | View analytics data             |
-| GET  | `/logout`             | Logout admin                    |
+| Method | Endpoint          | Description            |
+|------|-------------------|------------------------|
+| POST | `/`               | Admin login            |
+| POST | `/posts`          | Add new post           |
+| GET  | `/posts`          | Get all posts          |
+| GET  | `/posts/<id>`     | Get post by ID         |
+| PUT  | `/posts/<id>`     | Update post            |
+| DELETE | `/delete/<id>`  | Delete post            |
+| GET  | `/analytics`      | View analytics         |
+| GET  | `/logout`         | Logout admin           |
 
 ---
 
-## 📥 Sample JSON Request
+## 📥 Sample Request (POST `/posts`)
 
-### Add Post (POST `/posts`)
+title = AI in Healthcare
+content = AI helps doctors detect diseases early
+status = Published
+email = admin@example.com
 
-```json
-{
-  "title": "AI in Healthcare",
-  "content": "AI helps doctors detect diseases early",
-  "status": "Published",
-  "email": "admin@example.com",
-  "phone": "7893412468"
-}
+phone = 7893412468
+
+---
+
+## 🧪 Testing with Postman
+
+1. Open **Postman**
+2. Select request method (POST / GET / PUT / DELETE)
+3. Enter URL, for example:http://127.0.0.1:5000/posts 
+4. Go to **Body → x-www-form-urlencoded**
+5. Enter required fields
+6. Click **Send**
+
+---
+
+## ⚠️ Notes
+
+* Data is stored in **SQLite database**
+* Analytics are calculated based on post status
+* Designed for academic and learning purposes
+
+---
+
+## 👨‍💻 Author
+
+**Advaitha Sreenivas**
+
+---
+
+## 📜 License
+
+This project is for educational purposes and free to use.  
 
 
-##🧪 Testing with Postman
 
-Open Postman
 
-Select HTTP method (POST / GET / PUT / DELETE)
 
-Enter API URL, for example:
-http://127.0.0.1:5000/posts
-For POST or PUT:
-
-Go to Body → raw → JSON
-
-Paste JSON data
-
-Click Send
-
-Verify response status and data
-
-##⚠️ Notes
-
-Authentication is session-based
-
-Unauthorized access redirects to login
-
-Analytics data is calculated from stored posts
-
-Database file can be replaced with MySQL or MongoDB for production use
-
-##👨‍💻 Author
-
-Advaitha sreenivas
-
-##📜 License
-
-This project is created for educational purposes and is free to use for learning and academic demonstrations.
